@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从"互联网码农"到"小学园丁"的奇幻漂流 - 解诗语老师年度汇报</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", SimSun, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        header {
+            background: linear-gradient(120deg, #1a5fb4, #26a269);
+            color: white;
+            padding: 40px 30px 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
+        }
+        .subtitle {
+            font-size: 20px;
+            font-weight: normal;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .teacher-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            gap: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            border: 3px solid white;
+        }
+        .info-text {
+            text-align: left;
+        }
+        .info-text h2 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .info-text p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .episode {
+            margin-bottom: 40px;
+            border-left: 4px solid #26a269;
+            padding-left: 20px;
+        }
+        .episode-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .episode-number {
+            background: #26a269;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .episode-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1a5fb4;
+        }
+        .section {
+            margin-bottom: 25px;
+        }
+        .section-title {
+            font-size: 20px;
+            color: #1a5fb4;
+            margin-bottom: 12px;
+            padding-bottom: 5px;
+            border-bottom: 2px dashed #e0e0e0;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #fdf6b2 0%, #fdf6b2 100%);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .emoticon {
+            font-size: 20px;
+            margin: 0 2px;
+            vertical-align: middle;
+        }
+        .quote {
+            background: #f8f9fa;
+            border-left: 4px solid #26a269;
+            padding: 15px 20px;
+            margin: 15px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        .research-report {
+            background: #f0f7ff;
+            border: 1px solid #cce0ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .research-title {
+            font-size: 18px;
+            color: #0d47a1;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .research-content {
+            padding-left: 15px;
+        }
+        .research-item {
+            margin-bottom: 15px;
+        }
+        .code-block {
+            background: #2b2b2b;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .update-box {
+            background: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .update-title {
+            font-size: 20px;
+            color: #0d47a1;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .update-content {
+            padding-left: 20px;
+        }
+        .update-item {
+            margin-bottom: 15px;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+        .signature {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a5fb4;
+            margin-top: 20px;
+        }
+        .date {
+            margin-top: 10px;
+            color: #666;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(120deg, #1a5fb4, #26a269);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 95, 180, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(26, 95, 180, 0.4);
+        }
+        .btn-copy {
+            background: linear-gradient(120deg, #c64600, #ff7800);
+        }
+        .btn-download {
+            background: linear-gradient(120deg, #26a269, #33d17a);
+        }
+        .copy-notice {
+            margin-top: 15px;
+            color: #26a269;
+            font-weight: bold;
+            height: 25px;
+        }
+        .emoji-row {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 20px;
+            gap: 15px;
+        }
+        .emoji-large {
+            font-size: 40px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 25px 20px;
+            }
+            .teacher-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            .episode-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>从"互联网码农"到"小学园丁"的奇幻漂流<br>
+                    <span class="subtitle">教师的年度"热梗"大赏</span>
+                </h1>
+                <div class="teacher-info">
+                    <div class="avatar">👩‍🏫</div>
+                    <div class="info-text">
+                        <h2>解诗语老师</h2>
+                        <p>三年级信息科技教师 | 退役程序员 | 哪里需要哪里搬的“砖”</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <p><strong>尊敬的各位领导、亲爱的老师们：</strong></p>
+                <p>大家好！我是解诗语，三年级信息科技老师。一年前，我的日常是：键盘敲得冒火星，咖啡续命到天明，身份是身兼数职（产品、开发、测试）的<strong class="highlight">"互联网打工人"</strong>。一年后，站在这里，我的新身份是——<strong class="highlight">小学信息科技教师</strong>！这一年，堪称我人生的<strong class="highlight">"大型跨界励志短剧"</strong>，片名叫——《<strong class="highlight">我在小学当"码农"</strong>》！今天，就给大家汇报一下第一季的<strong class="highlight">"高能（抓马）剧情"</strong>和我的<strong class="highlight">"第二季更新预告"</strong>！</p>
+            </div>
+            
+            <div class="episode">
+                <div class="episode-title">
+                    <div class="episode-number">1</div>
+                    <div class="episode-text">初入副本——当"技术流"撞上"萌娃军团"，CPU直接烧了！</div>
+                </div>
+                
+                <div class="section">
+                    <p>刚"开机"教师模式，我自信爆棚！感觉带着满级<strong class="highlight">"技术大礼包"</strong>空降新手村，妥妥<strong class="highlight">"降维打击"</strong>！</p>
+                    
+                    <div class="section">
+                        <div class="section-title">运维副本？轻松拿捏！</div>
+                        <p>400+老师人脸识别、200+工卡贴纸？门禁饭卡系统必须<strong class="highlight">"丝滑稳如泰山"</strong>！搞定！</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">信息枢纽？基操勿六！</div>
+                        <p>企业微信、学科网账号维护？So easy！</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">气氛组担当？行走的"技术救心丸"！</div>
+                        <p>教师大会、活动演出？灯光音响PPT背景切换？保障流程<strong class="highlight">"芜湖起飞"</strong>不翻车！</p>
+                    </div>
+                    
+                    <p>那一刻，我感觉自己就是校园里的<strong class="highlight">"YYDS"</strong>（永远滴神）！<strong class="highlight">然鹅... 现实很快给我推送了一集《变形计》！</strong></p>
+                    
+                    <div class="section">
+                        <div class="section-title">沟通对象画风突变：</div>
+                        <p>从逻辑清晰的程序员兄弟，变成了思维<strong class="highlight">"量子纠缠"</strong>般跳跃的小小人类。他们的"需求"天马行空，变更还<strong class="highlight">不需要提工单</strong>！比如：</p>
+                        <div class="quote">
+                            <strong>经典案例回放：</strong> 某天，一位小可爱指着机房，眼神纯真地问我：<strong class="highlight">"老师，机房机房，是不是专门养小鸡（鸡）的房子呀？"</strong> 那一刻，我的CPU经历了前所未有的逻辑风暴！我强忍笑意，解释说："此'机'非彼'鸡'，这里是'计算机'的家！不过，你的想象力，老师给你点个大大的赞！" <strong class="highlight">（内心OS：这需求变更，太硬核了！）</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">交付周期史诗级拉长：</div>
+                        <p>以前写代码，今天Bug明天Fix。现在带娃？那是<strong class="highlight">"超长待机养成游戏"</strong>！急不得，得<strong class="highlight">"静待花开"</strong>——虽然有时候感觉花在"装睡"。</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">反馈机制玄学化：</div>
+                        <p>程序运行，结果立竿见影（成功 or 报错）。教孩子？效果像开<strong class="highlight">"盲盒"</strong>！没有清晰的"Debug"日志，全靠<strong class="highlight">"望闻问切"</strong>和<strong class="highlight">"爱的魔力转圈圈"</strong>（耐心）。</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">最狠的是"多线程"压力测试！</div>
+                        <p>14个班信息课 + 1个班科学课 + 四年级选修 + 竞赛社团 + 技术支持 + 设计宣传 + 偶尔主持表演当"气氛组"... 好家伙！感觉大脑像开了<strong class="highlight">100个Chrome标签页的旧电脑</strong>，<strong class="highlight">CPU常年100%</strong>，风扇（我本人）狂转！经常陷入<strong class="highlight">"我是谁？我在哪？先干哪个？"</strong>的哲学三问！备课这个<strong class="highlight">"主线程"</strong>，经常被其他<strong class="highlight">"高优先级弹窗"</strong>（比如突然的"老师！打印机又吃纸了！"）给无情<strong class="highlight">"抢断"</strong>。</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">附加暴击：</div>
+                        
+                        <div class="research-report">
+                            <div class="research-title">《关于人类教师过度使用🌹🙏的表情符号行为研究》</div>
+                            <div class="research-content">
+                                <div class="research-item"><strong>研究对象：</strong> 本人</div>
+                                <div class="research-item"><strong>症状表现：</strong></div>
+                                <div class="research-item">- 出现<strong class="highlight">不自主表情包手癖</strong>（批作业评语自动生成🌹🙏矩阵）</div>
+                                <div class="research-item">- 发展出<strong class="highlight">新型沟通语法</strong>：</div>
+                                <div class="code-block">
+                                    一年前："外卖放门口就行，谢谢！"<br>
+                                    现在："辛苦放门口🌹🌹🌹  祝您日进斗金！🙏🙏🙏"
+                                </div>
+                                <div class="research-item"><strong>结论：</strong> 教师职业导致<strong class="highlight">礼貌阈值溢出</strong>，疑似感染"温柔病毒"</div>
+                            </div>
+                        </div>
+                        
+                        <div class="research-report">
+                            <div class="research-title">《职业转换致运动量突变研究报告》</div>
+                            <div class="research-content">
+                                <div class="code-block">
+[观测对象] 前码农·现教师<br>
+[变量对比]<br>
+- BEFORE: steps=4000 (状态：🛋️"沙发の王")<br>
+- AFTER: steps≥15000 (状态：🏃"人形自走陀螺")<br><br>
+[异常现象]<br>
+1. 智能手表疑似觉醒AI意识：<br>
+   - 推送"目标达成！"（实际含义："今日份腿已废"）<br>
+2. 蚂蚁森林生态剧变：<br>
+   - 能量来源=用生命竞走<br>
+   - 副作用：膝盖关节报错"404 Not Found"<br><br>
+[结论]<br>
+符合教师第一定律：步数∝疲惫度²
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="episode">
+                <div class="episode-title">
+                    <div class="episode-number">2</div>
+                    <div class="episode-text">寻找接口——技术力变身"教育外挂"，师生一起"上大分"！</div>
+                </div>
+                
+                <div class="section">
+                    <p>痛定思痛，我开始疯狂寻找"技术力"和"教育力"的<strong class="highlight">"通用转换插头"</strong>（<strong>API</strong>：简单说就是能让两个不同东西顺利"对话"和"合作"的接口）。一年摸索，终于！<strong class="highlight">外挂安装成功！</strong></p>
+                    
+                    <div class="section">
+                        <div class="section-title">竞赛副本："高并发"处理，赢麻了！</div>
+                        <p>带着我的<strong class="highlight">"数字小分队"</strong>一路<strong class="highlight">"升级打怪"</strong>！GESP一级？<strong class="highlight">全员通关！</strong> 区市创客节、编程大赛、全国信息素养大赛？<strong class="highlight">拿奖拿到"手软"！</strong> 一二三等奖？那都是<strong class="highlight">"洒洒水"</strong>！晋级省赛？直接<strong class="highlight">"安排"</strong>！看着奖状<strong class="highlight">"抱回家"</strong>，我也喜提区、市、省<strong class="highlight">"优秀指导教师"</strong>。这种成就感，比成功上线一个<strong class="highlight">"亿元级项目"</strong>还<strong class="highlight">"上头"</strong>！这就是技术+教育+项目管理<strong class="highlight">"梦幻联动"</strong>的胜利！</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">技术赋能："卷王"的自我修养（有质感的卷）！</div>
+                        <p>PPT玩出花？数据可视化看穿学情？用AI<strong class="highlight">"黑科技"</strong>辅助备课上课？视频剪辑做酷炫微课？作为退役程序员，高效工具流必须拉满！努力成为同事眼中的<strong class="highlight">"人形自走技术外挂"</strong>，有求必应（尽量！），用数据说话，用技术提效！<strong class="highlight">"卷"，也要卷出生产力，卷出价值！</strong></p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">"产品经理"附体：</div>
+                        <p>开始像设计APP一样设计课堂：研究<strong class="highlight">"用户画像"</strong>（学生特点），设计<strong class="highlight">"核心功能"</strong>（有趣活动），收集<strong class="highlight">"用户反馈"</strong>（课堂反应、小眼神），快速<strong class="highlight">"版本迭代"</strong>（调整教学）。课堂，成了我最在意的<strong class="highlight">"旗舰产品"</strong>。</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">"运维"魂不灭：</div>
+                        <p>我的使命？确保学习环境<strong class="highlight">"稳如老狗"</strong>（设备网络OK），流程<strong class="highlight">"丝滑顺畅"</strong>（活动支撑到位），数据<strong class="highlight">"绝对真实"</strong>（成绩分析有用）。门禁饭卡"稳如泰山"？这就是我对全校师生的<strong class="highlight">"SLA"</strong>（<strong>服务承诺</strong>：保证系统可用稳定，就像你跟运营商签的协议说网络不能总掉线）！</p>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="section-title">最大的"暴击"是温暖暴击！</div>
+                        <p>当学生用刚学的Scratch做出一个傻乎乎但充满创意的小动画，兴奋地喊<strong class="highlight">"老师快看！"</strong>；当他们用最朴实的语言说<strong class="highlight">"谢谢老师，这节课真好玩"</strong>；那一刻的治愈感和价值感，是任何一行完美代码都无法比拟的。我悟了！教育的<strong class="highlight">"核心算法"</strong>不是0和1，是<strong class="highlight">爱、耐心和见证成长</strong>！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="episode">
+                <div class="episode-title">
+                    <div class="episode-number">3</div>
+                    <div class="episode-text">版本更新1.2 —— "主线程"置顶！优雅拒绝"需求蔓延"！</div>
+                </div>
+                
+                <div class="section">
+                    <p>一年的"公测"，暴露了关键<strong class="highlight">"性能瓶颈"</strong>：<strong class="highlight">时间管理模块急需优化！内存（精力）分配严重不合理！</strong> 为了输出更<strong class="highlight">"硬核"</strong>的教学成果，我隆重发布<strong class="highlight">"解老师OS 1.2版本更新公告"</strong>：</p>
+                    
+                    <div class="update-box">
+                        <div class="update-title">解老师OS 1.2版本更新公告</div>
+                        <div class="update-content">
+                            <div class="update-item">
+                                <strong>核心目标：</strong> 必须！必须！必须把常规教学<strong class="highlight">"置顶"</strong>！让它永远是<strong class="highlight">"一号工程"</strong>！课堂教学就是我的<strong class="highlight">"主战场"</strong>和<strong class="highlight">"核心业务逻辑"</strong>！
+                            </div>
+                            
+                            <div class="update-item">
+                                <strong>更新内容（修复Bug & 功能增强）：</strong>
+                            </div>
+                            
+                            <div class="update-item">
+                                <strong>修复"资源调度"逻辑：</strong> 深入学习<strong class="highlight">"时间管理算法"</strong>（番茄钟？GTD？待我研究！），<strong class="highlight">为备课划出"神圣不可侵犯"的"深蹲"时间！</strong> 口号：<strong class="highlight">"备课不牢，地动山摇！谁都别想打扰我闭关！"</strong>（当然，紧急救火除外…）
+                            </div>
+                            
+                            <div class="update-item">
+                                <strong>升级"核心教学引擎"：</strong> 更深度钻研课标、教材和娃们的<strong class="highlight">"运行逻辑"</strong>（认知规律），让备课更精准，课堂更高效、更有趣、更<strong class="highlight">"高能"</strong>！拒绝<strong class="highlight">"水课"</strong>，追求<strong class="highlight">"现象级课堂"</strong>！
+                            </div>
+                            
+                            <div class="update-item">
+                                <strong>新增"优雅拒绝"技能（史诗级强化！）：</strong> 在保障<strong class="highlight">"核心服务"</strong>（教学）质量的前提下，面对<strong class="highlight">"需求蔓延"</strong>（过多的非紧急杂务），我将启动全新话术：
+                                <div class="quote">
+                                    "亲，您的这个需求非常有创意/价值！（先肯定）<br>
+                                    它已被成功收录进我的<strong class="highlight">'豪华待办列表'</strong>！<br>
+                                    当前服务器（我本人）资源紧张，正在全力保障'一号工程'（教学）稳定运行。<br>
+                                    预计排期嘛... <strong class="highlight">本世纪内一定给您安排上！</strong> （附赠一个真诚而不失礼貌的<span class="emoticon">🌹</span><span class="emoticon">🌹</span><span class="emoticon">🌹</span>）"<br>
+                                    <strong>（潜台词：亲，理解万岁！等我喘口气！）</strong>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <strong>持续学习"补丁包"：</strong> 保持<strong class="highlight">"敏捷开发"</strong>心态（小步快跑，持续改进），学习教育理论，观摩大咖课堂，疯狂给自己<strong class="highlight">"打补丁"</strong>，升级<strong class="highlight">"系统版本"</strong>！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="episode">
+                <div class="episode-title">
+                    <div class="episode-number">🎬</div>
+                    <div class="episode-text">最终集彩蛋：未完待续… 用行动书写未来！</div>
+                </div>
+                
+                <div class="section">
+                    <p><strong class="highlight">"教育路长，行则将至！"</strong> 感谢学校提供的<strong class="highlight">"优质服务器"</strong>（平台），感谢领导同事们的<strong class="highlight">"强力带宽支持"</strong>和对我这个<strong class="highlight">"画风清奇"</strong>新人的包容！</p>
+                    
+                    <p>从<strong class="highlight">"码农"</strong>到<strong class="highlight">"园丁"</strong>，我越发坚定：<strong class="highlight">我不是在"写代码"，我是在和一群充满奇思妙想的小可爱们，共同"编写"一个名为"成长"的、充满无限可能的未来程序！</strong></p>
+                    
+                    <div class="quote">
+                        <strong>这一年，我深深体会到：教育没有一键编译成功的捷径，但只要在行动，就是在向前走。</strong> 每一个踏实的脚印，每一次用心的互动，都是向理想教育靠近的代码行。
+                    </div>
+                    
+                    <p>我愿意继续做他们探索科技世界的<strong class="highlight">"引路人"</strong>和关键时刻提供补给的<strong class="highlight">"NPC"</strong>，用我独特的<strong class="highlight">"00后科技与狠活"</strong>（<strong class="highlight">纯绿色无污染正能量版！</strong>），为咱们可爱的学校，贡献一份<strong class="highlight">闪亮的"数字新动能"</strong>！</p>
+                    
+                    <p>未来已来！我会带着这份充满<strong class="highlight">"Bug"</strong>（不足）也闪耀着<strong class="highlight">"高光"</strong>的<strong class="highlight">"年度运行报告"</strong>，持续迭代，持续优化，<strong class="highlight">保持行动</strong>！努力在下一季，为大家带来更<strong class="highlight">"稳定"</strong>、更<strong class="highlight">"硬核"</strong>、更<strong class="highlight">"有趣"</strong>的版本！</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="emoji-row">
+                <div class="emoji-large">🌹</div>
+                <div class="emoji-large">🙏</div>
+                <div class="emoji-large">💻</div>
+                <div class="emoji-large">👩‍🏫</div>
+                <div class="emoji-large">🚀</div>
+            </div>
+            
+            <p class="signature">解诗语</p>
+            <p class="date">2025年7月19日</p>
+            <p><strong class="highlight">我们，下季再见！</strong> <span class="emoticon">🙏</span><span class="emoticon">🙏</span><span class="emoticon">🙏</span></p>
+            
+            <div class="controls">
+                <button class="btn btn-copy" onclick="copyToClipboard()">
+                    <span>📋</span> 复制内容到Word
+                </button>
+                <button class="btn btn-download" onclick="downloadAsDoc()">
+                    <span>💾</span> 下载为Word文档
+                </button>
+            </div>
+            
+            <div class="copy-notice" id="copyNotice"></div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const container = document.querySelector('.container');
+            const range = document.createRange();
+            range.selectNode(container);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            
+            try {
+                document.execCommand('copy');
+                document.getElementById('copyNotice').textContent = '内容已复制！可粘贴到Word文档中';
+            } catch (err) {
+                document.getElementById('copyNotice').textContent = '复制失败，请手动选择复制';
+            }
+            
+            window.getSelection().removeAllRanges();
+        }
+        
+        function downloadAsDoc() {
+            const content = document.querySelector('.container').innerHTML;
+            const header = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>解诗语老师年度汇报</title>
+                    <style>
+                        body { 
+                            font-family: SimSun, Microsoft YaHei, sans-serif; 
+                            line-height: 1.6; 
+                            margin: 2cm;
+                        }
+                        .container {
+                            max-width: 21cm;
+                            margin: 0 auto;
+                        }
+                        header {
+                            background: #1a5fb4;
+                            color: white;
+                            padding: 1.5cm 1cm 1cm;
+                            text-align: center;
+                        }
+                        h1 {
+                            font-size: 28pt;
+                            margin-bottom: 0.5cm;
+                        }
+                        /* 其他样式保留 */
+                    </style>
+                </head>
+                <body>
+            `;
+            const footer = `</body></html>`;
+            
+            const source = header + content + footer;
+            const blob = new Blob([source], {type: 'application/msword'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = '解诗语老师年度汇报.doc';
+            document.body.appendChild(a);
+            a.click();
+            
+            setTimeout(() => {
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            }, 100);
+        }
+    </script>
+</body>
+</html>
